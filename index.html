@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anniversary Invitation - Manish & Sneha</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas class="confetti"></canvas>
+    <div class="invitation-card">
+        <div class="title">You're Invited!</div>
+        <div class="couple-names">
+            Manish <span class="and-symbol">&</span> Sneha
+        </div>
+        <div class="details">
+            cordially invite you to celebrate our<br>
+            <strong>Anniversary</strong><br>
+            <br>
+            <b>Date:</b> 15th August 2025<br>
+            <b>Venue:</b> At a hotel room in guar city centre<br>
+            Time: 11:00 AM onwards
+            <br><br>
+            Your presence will make it special!
+        </div>
+        <button class="rsvp-btn" onclick="showRSVPMessage()">click me</button>
+        <button class="rsvp-btn" onclick="openWishModal();">Click for Surprise</button>
+        <!-- <button class="rsvp-btn" onclick="openWishModal();">Click for Surprise</button> -->
+        <div class="footer-msg" id="rsvp-msg" style="display:none;">Thank you for your response! See you at the celebration.</div>
+    </div>
+
+    <!-- Hidden Modal Popup -->
+    <div id="wishModal" class="wish-modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeWishModal();">&times;</span>
+        <img class="modal-photo" src="https://cdn.pixabay.com/photo/2018/04/23/16/22/welcome-3344772_960_720.jpg" alt="Special Memory">
+        <div class="modal-wish">
+          “We look forward to celebrating this occasion with you,<br>
+          please do join us!”
+        </div>
+     </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

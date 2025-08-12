@@ -1,0 +1,205 @@
+body {
+    margin:0;
+    padding:0;
+    min-height:100vh;
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.invitation-card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 24px;
+    box-shadow: 0 6px 32px rgba(80,78,155,.18), 0 1.5px 8px rgba(80,78,155,.11);
+    max-width: 400px;
+    width: 100%;
+    padding: 35px 28px 40px 28px;
+    text-align: center;
+    animation: fadeIn 1.7s cubic-bezier(.23,1.04,.62,.98);
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes fadeIn {
+    0% {transform: scale(.9); opacity: 0;}
+    100% {transform: scale(1); opacity: 1;}
+}
+.title {
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: .7em;
+}
+.couple-names {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #4b1979;
+    margin-bottom: 0.2em;
+}
+.and-symbol {
+    color: #e52e71;
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin: 0 2px;
+}
+.details {
+    color: #535353;
+    margin-bottom: 1.5em;
+    font-size: 1.06rem;
+}
+.rsvp-btn {
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    color: #fff;
+    padding: 0.8em 2.3em;
+    font-size: 1.09rem;
+    border:none;
+    border-radius: 18px;
+    cursor:pointer;
+    box-shadow: 0 2px 7px rgba(80,78,155,.09);
+    transition: background 0.2s, transform 0.15s;
+    margin-top: 10px;
+    width: 85%;
+    max-width: 280px;
+}
+.rsvp-btn:hover {
+    background: linear-gradient(270deg, #ff8a00, #e52e71);
+    transform: scale(1.06);
+}
+.footer-msg {
+    color:#7a5ca4;
+    margin-top:1.6em;
+    font-size:1em;
+    letter-spacing: 0.1em;
+}
+.confetti {
+    position: absolute;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* CSS for Modal popup */
+.wish-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(44,44,44,0.23) ;
+  backdrop-filter: blur(4px);
+  justify-content: center; align-items: center;
+}
+.wish-modal.active { display: flex; }
+
+.modal-content {
+  background: #fff7ef;
+  border-radius: 27px;
+  box-shadow: 0 8px 32px #cfb16c52;
+  padding: 38px 30px 30px 30px;
+  position: relative;
+  min-width: 310px;
+  text-align: center;
+  animation: pop-in 0.5s cubic-bezier(0.4,2,0.4,1);
+  max-width: 90vw;
+}
+
+@keyframes pop-in { from {transform: scale(0.8); opacity:0;} to {transform: scale(1); opacity:1;} }
+
+.close-btn {
+  position: absolute;
+  top: 18px; right: 25px;
+  font-size: 2rem;
+  color: #eaad4e;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.close-btn:hover { color: #b45b00; }
+
+.modal-photo {
+  width: 110px; height: 110px;
+  border-radius: 50%;
+  border: 4px solid #ffdaac;
+  box-shadow: 0 4px 16px #ffe0aa70;
+  margin-bottom: 19px;
+  object-fit: cover;
+}
+
+.modal-wish {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.28rem;
+  color: #b45b00;
+  background: linear-gradient(95deg, #fffbe2 60%, #ffe6db);
+  border-radius: 18px;
+  padding: 18px 16px 12px 16px;
+  margin-top: 6px;
+  box-shadow: 0 2px 8px #ffdaa7a0;
+}
+
+/* Responsive CSS for mobile */
+@media (max-width: 600px) {
+  body {
+    align-items: flex-start; /* So card comes down */
+    padding: 15px 0;
+  }
+  .invitation-card {
+    max-width: 100vw;
+    width: 97vw;
+    padding: 22px 10px 28px 10px;
+    border-radius: 15px;
+    font-size: 1rem;
+  }
+  .title {
+    font-size: 1.4rem;
+    margin-bottom: 0.4em;
+  }
+  .couple-names {
+    font-size: 1.12rem;
+    margin-bottom: 0.17em;
+  }
+  .and-symbol {
+    font-size: 1.38rem;
+    margin: 0 1px;
+  }
+  .details {
+    font-size: 0.95rem;
+    margin-bottom: 1.2em;
+  }
+  .rsvp-btn {
+    font-size: 0.95rem;
+    padding: 0.7em 1.3em;
+    width: 100%;
+    max-width: 260px;
+  }
+  .footer-msg {
+    font-size: 0.95em;
+    margin-top: 1.2em;
+  }
+  .modal-content {
+    min-width: 0;
+    width: 92vw;
+    padding: 18px 6px 16px 6px;
+    border-radius: 18px;
+  }
+  .modal-photo {
+    width: 74px;
+    height: 74px;
+    margin-bottom: 13px;
+  }
+  .modal-wish {
+    font-size: 1.02rem;
+    padding: 9px 5px 10px 5px;
+    border-radius: 12px;
+  }
+  .confetti {
+    width: 100vw;
+    height: 100vh;
+  };
+  
+};
